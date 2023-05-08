@@ -16,7 +16,6 @@
     }).reduce((acumulador, valor) => acumulador + valor)
 
   }
-  BinarioADecimal(11001);
 
 function DecimalABinario(num) {
   // 91 = 1011011
@@ -47,7 +46,6 @@ function DecimalABinario(num) {
 
   return resultado.split("").reverse().join("")
 }
-DecimalABinario(91);
 
 module.exports = {
   BinarioADecimal,
