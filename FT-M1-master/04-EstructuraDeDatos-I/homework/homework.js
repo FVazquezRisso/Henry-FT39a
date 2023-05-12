@@ -53,13 +53,13 @@ class Queue {
   }
 
   dequeue() {
-    if (this.array.length == 0) {
+    if (!this.array.length) {
       return undefined;
     } else {
       return this.array.shift();
     }
   }
-
+  
   size() {
     return this.array.length;
   }
