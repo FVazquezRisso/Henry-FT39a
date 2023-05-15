@@ -48,6 +48,15 @@ class LinkedList {
     let actual = this.head;
     let anterior = null;
 
+    // while (actual.next.next) {
+    //       actual = actual.next;
+    //     }
+    //     let aeliminar = actual.next.value;
+    //     actual.next = null;
+
+    //     return aeliminar;
+    //   }
+
     while (actual.next) {
       anterior = actual;
       actual = actual.next;
