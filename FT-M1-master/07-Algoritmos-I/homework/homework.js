@@ -7,6 +7,19 @@ function factorear(num) {
   // Ej: factorear(180) --> [1, 2, 2, 3, 3, 5] Ya que 1x2x2x3x3x5 = 180 y son todos números primos
   // Tu código:
 
+  let array = [1];
+  let divisor = 2;
+
+  while (num > 1) {
+    if (num % divisor === 0) {
+      array.push(divisor);
+      num = num / divisor;
+    } else {
+      divisor++;
+    }
+  }
+
+  return array;
 }
 
 function bubbleSort(array) {
@@ -15,8 +28,21 @@ function bubbleSort(array) {
   // Devolver el array ordenado resultante
   // Tu código:
 
-}
+  let iterar = true;
 
+  while (iterar) {
+    iterar = false;
+
+    for (let i = 0; i < array.length - 1; i++) {
+      if (array[i] > array[i + 1]) {
+        [array[i], array[i + 1]] = [array[i + 1], array[i]];
+        iterar = true;
+      }
+    }
+  }
+
+  return array;
+}
 
 function insertionSort(array) {
   // Implementar el método conocido como insertionSort para ordenar de menor a mayor
@@ -24,8 +50,17 @@ function insertionSort(array) {
   // Devolver el array ordenado resultante
   // Tu código:
 
-}
+  for (let i = 1; i < array.length; i++) {
+    let j = i;
 
+    while (j > 0 && array[j] < array[j - 1]) {
+      [array[j], array[j - 1]] = [array[j - 1], array[j]];
+      j--;
+    }
+  }
+
+  return array;
+}
 
 function selectionSort(array) {
   // Implementar el método conocido como selectionSort para ordenar de menor a mayor
@@ -33,6 +68,19 @@ function selectionSort(array) {
   // Devolver el array ordenado resultante
   // Tu código:
 
+  for (let i = 0; i < array.length; i++) {
+    let menor = i;
+
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] < array[menor]) menor = j;
+    }
+
+    if (i !== menor) {
+      [array[i], array[menor]] = [array[menor], array[i]];
+    }
+  }
+
+  return array;
 }
 
 

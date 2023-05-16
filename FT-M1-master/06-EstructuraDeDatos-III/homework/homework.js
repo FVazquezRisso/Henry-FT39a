@@ -73,8 +73,8 @@ class BinarySearchTree {
   }
 
   breadthFirstForEach(cb, array = []) {
-    this.left !== null && array.push(this.left);
-    this.right !== null && array.push(this.right);
+    this.left && array.push(this.left);
+    this.right && array.push(this.right);
     cb(this.value);
     array.length > 0 && array.shift().breadthFirstForEach(cb, array);
   }
